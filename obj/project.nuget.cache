@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "B+hAhbW0MgiyXJsUiTqcDXsysCuSp8x00qrz+J3FbEOM3Y9210aVzCG8r8dVqNtA7n5jDb+4wO5neVpkxIidnA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Maheri\\Desktop\\CI\\cc-d4-rice-cooker-ci-Maheri29\\rice.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Maheri\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\Maheri\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\Maheri\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\Maheri\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,16 @@
+C:\Users\Maheri\Desktop\CI\cc-d4-rice-cooker-ci-Maheri29\bin\Debug\net5.0\rice.exe
+C:\Users\Maheri\Desktop\CI\cc-d4-rice-cooker-ci-Maheri29\bin\Debug\net5.0\rice.deps.json
+C:\Users\Maheri\Desktop\CI\cc-d4-rice-cooker-ci-Maheri29\bin\Debug\net5.0\rice.runtimeconfig.json
+C:\Users\Maheri\Desktop\CI\cc-d4-rice-cooker-ci-Maheri29\bin\Debug\net5.0\rice.runtimeconfig.dev.json
+C:\Users\Maheri\Desktop\CI\cc-d4-rice-cooker-ci-Maheri29\bin\Debug\net5.0\rice.dll
+C:\Users\Maheri\Desktop\CI\cc-d4-rice-cooker-ci-Maheri29\bin\Debug\net5.0\rice.pdb
+C:\Users\Maheri\Desktop\CI\cc-d4-rice-cooker-ci-Maheri29\obj\Debug\net5.0\rice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Maheri\Desktop\CI\cc-d4-rice-cooker-ci-Maheri29\obj\Debug\net5.0\rice.AssemblyInfoInputs.cache
+C:\Users\Maheri\Desktop\CI\cc-d4-rice-cooker-ci-Maheri29\obj\Debug\net5.0\rice.AssemblyInfo.cs
+C:\Users\Maheri\Desktop\CI\cc-d4-rice-cooker-ci-Maheri29\obj\Debug\net5.0\rice.csproj.CoreCompileInputs.cache
+C:\Users\Maheri\Desktop\CI\cc-d4-rice-cooker-ci-Maheri29\obj\Debug\net5.0\rice.sourcelink.json
+C:\Users\Maheri\Desktop\CI\cc-d4-rice-cooker-ci-Maheri29\obj\Debug\net5.0\rice.dll
+C:\Users\Maheri\Desktop\CI\cc-d4-rice-cooker-ci-Maheri29\obj\Debug\net5.0\refint\rice.dll
+C:\Users\Maheri\Desktop\CI\cc-d4-rice-cooker-ci-Maheri29\obj\Debug\net5.0\rice.pdb
+C:\Users\Maheri\Desktop\CI\cc-d4-rice-cooker-ci-Maheri29\obj\Debug\net5.0\rice.genruntimeconfig.cache
+C:\Users\Maheri\Desktop\CI\cc-d4-rice-cooker-ci-Maheri29\obj\Debug\net5.0\ref\rice.dll
