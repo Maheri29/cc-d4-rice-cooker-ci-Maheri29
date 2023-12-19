@@ -9,7 +9,7 @@ class Program
     }
 }
 
-class RiceCooker
+public class RiceCooker
 {
     public static void choisirMode()
     {
@@ -26,21 +26,32 @@ class RiceCooker
         }
     }
 
-    static void afficherModes()
+    public static void afficherAlertes(int tempsCuisson)
     {
-        Console.WriteLine("Modes disponibles :");
-        Console.WriteLine("1. Riz Blanc");
-        Console.WriteLine("2. Riz Complet");
-        Console.WriteLine("3. Cuisson Vapeur");
-        Console.WriteLine("4. Autre aliment");
+        Console.WriteLine("Types d'alertes disponibles :");
+        string[] alertes = { "Son", "Lumières clignotantes" };
+
+        Console.WriteLine("Choisissez le type d'alerte pour signaler la fin de la cuisson :");
+        string choixAlerte = promptSelect("Choisissez le type d'alerte pour signaler la fin de la cuisson :", alertes);
+
+        if (Array.Exists(alertes, alerte => alerte == choixAlerte))
+        {
+            alerteSelectionnee(choixAlerte, tempsCuisson);
+        }
     }
 
-    static string[] modesDisponibles()
+    public static void alerteSelectionnee(string choixAlerte, int tempsCuisson)
     {
-        return new string[] { "Riz Blanc", "Riz Complet", "Cuisson Vapeur", "Autre aliment" };
+        Thread alertThread = new Thread(() => afficherAlerte(choixAlerte, tempsCuisson));
+        alertThread.Start();
+
+        string[] optionsApresCuisson = { "Éteindre", "Maintenir au chaud" };
+        string choixApresCuisson = promptSelect("Que voulez-vous faire maintenant?", optionsApresCuisson);
+
+        traiterChoixApresCuisson(choixApresCuisson);
     }
 
-    static int determinerTemps(string choix)
+    public static int determinerTemps(string choix)
     {
         switch (choix)
         {
@@ -57,12 +68,36 @@ class RiceCooker
         }
     }
 
-    static void afficherModeSelectionne(string choix)
+    private static void afficherModes()
+    {
+        Console.WriteLine("Modes disponibles :");
+        Console.WriteLine("1. Riz Blanc");
+        Console.WriteLine("2. Riz Complet");
+        Console.WriteLine("3. Cuisson Vapeur");
+        Console.WriteLine("4. Autre aliment");
+    }
+
+    private static string[] modesDisponibles()
+    {
+        return new string[] { "Riz Blanc", "Riz Complet", "Cuisson Vapeur", "Autre aliment" };
+    }
+
+    private static string promptSelect(string message, string[] options)
+    {
+        Console.WriteLine(message);
+        foreach (var option in options)
+        {
+            Console.WriteLine(option);
+        }
+        return Console.ReadLine();
+    }
+
+    private static void afficherModeSelectionne(string choix)
     {
         Console.WriteLine($"Mode {choix} sélectionné");
     }
 
-    static int determinerTempsAutreAliment()
+    private static int determinerTempsAutreAliment()
     {
         Console.WriteLine("Entrez le temps de cuisson en secondes pour l'autre aliment :");
         int tempsPersonnalise = int.Parse(Console.ReadLine());
@@ -70,50 +105,25 @@ class RiceCooker
         return tempsPersonnalise > 0 ? tempsPersonnalise : afficherTempsInvalide();
     }
 
-    static int afficherTempsInvalide()
+    private static int afficherTempsInvalide()
     {
         Console.WriteLine("Temps invalide.");
         return 0;
     }
 
-    static void afficherErreurChoix()
+    private static void afficherErreurChoix()
     {
         Console.WriteLine("Choix non valide");
     }
 
-    static void afficherAlertes(int tempsCuisson)
-    {
-        Console.WriteLine("Types d'alertes disponibles :");
-        string[] alertes = { "Son", "Lumières clignotantes" };
-
-        Console.WriteLine("Choisissez le type d'alerte pour signaler la fin de la cuisson :");
-        string choixAlerte = promptSelect("Choisissez le type d'alerte pour signaler la fin de la cuisson :", alertes);
-
-        if (Array.Exists(alertes, alerte => alerte == choixAlerte))
-        {
-            alerteSelectionnee(choixAlerte, tempsCuisson);
-        }
-    }
-
-    static void alerteSelectionnee(string choixAlerte, int tempsCuisson)
-    {
-        Thread alertThread = new Thread(() => afficherAlerte(choixAlerte, tempsCuisson));
-        alertThread.Start();
-
-        string[] optionsApresCuisson = { "Éteindre", "Maintenir au chaud" };
-        string choixApresCuisson = promptSelect("Que voulez-vous faire maintenant?", optionsApresCuisson);
-
-        traiterChoixApresCuisson(choixApresCuisson);
-    }
-
-    static void afficherAlerte(string choixAlerte, int tempsCuisson)
+    private static void afficherAlerte(string choixAlerte, int tempsCuisson)
     {
         Thread.Sleep(tempsCuisson * 1000);
         string message = messageAlerte(choixAlerte);
         Console.WriteLine(message);
     }
 
-    static string messageAlerte(string choixAlerte)
+    private static string messageAlerte(string choixAlerte)
     {
         if (choixAlerte == "Son")
         {
@@ -125,7 +135,7 @@ class RiceCooker
         }
     }
 
-    static void traiterChoixApresCuisson(string choixApresCuisson)
+    private static void traiterChoixApresCuisson(string choixApresCuisson)
     {
         switch (choixApresCuisson)
         {
@@ -139,15 +149,5 @@ class RiceCooker
                 Console.WriteLine("Choix non valide. Le rice cooker sera éteint par défaut.");
                 break;
         }
-    }
-
-    static string promptSelect(string message, string[] options)
-    {
-        Console.WriteLine(message);
-        foreach (var option in options)
-        {
-            Console.WriteLine(option);
-        }
-        return Console.ReadLine();
     }
 }
